@@ -10,6 +10,13 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('register/', views.register, name='register'),
     path('profile/', views.profile, name='profile'),
+    #Blog posts urls
+    path('', views.PostListView.as_view(), name='post_list'),
+    path('post/<int:pk>/', views.PostDetailView.as_view(), name='post_detail'),
+    path('post/new/', views.PostCreateView.as_view(), name='post_form'),
+    path('post/<int:pk>/update/', views.PostUpdateView.as_view(), name='edit_post'),
+    path('post/<int:pk>/delete/', views.PostDeleteView.as_view(), name='post_confirm_delete'),
+
 
     path('search/', views.search_posts, name='search_posts'),
 ]
