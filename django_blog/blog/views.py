@@ -137,7 +137,7 @@ def search_posts(request):
         posts = Post.objects.filter(
             Q(title__icontains=query) | 
             Q(content__icontains=query) |
-            Q(tags_name_icontains=query)
+            Q(tags__name__icontains=query)
         ).distinct()
     else:
         posts = Post.objects.none()
