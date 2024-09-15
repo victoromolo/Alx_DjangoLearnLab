@@ -27,9 +27,6 @@ class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ['content']
-        widgets = {
-            'tags': TagWidget(),  # Use TagWidget for tag input
-        }
 
 class UpdateForm(forms.ModelForm):
     email = forms.EmailField()
